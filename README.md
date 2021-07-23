@@ -8,16 +8,15 @@ npm install v-simple-guided-tour
 ```
 
 ## Usage
-Here is an example of your component that will contain your list.
+Here is an example.
 
-The method appointed as the value of @cargar will be executed when the bottom of the element reaches the bottom of the viewport.
-
+The VSimpleGuidedTour will be on button#id1, button#id3, button#id4 and finally button#id2.
 
 ```HTML
 <template>
     <div id="app">
 
-        <v-simple-guided-tour :steps="steps" :show="showGuide" @closed="dialogClosed"/>
+        <v-simple-guided-tour :steps="steps" :show="showGuide" @closed="dialogClosed" color="#FD650A"/>
 
         <h1 style="text-align:center;">Press the button to show V Simple Guided Tour</h1>
         <button @click="showGuide = true">Show guide</button>
