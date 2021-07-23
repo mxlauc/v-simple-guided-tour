@@ -147,7 +147,8 @@ body{
   .dialog{
     border-radius: 4px;
     width: 400px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    max-width: calc(100% - 100px);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
   }
   .title{
     color:var(--color);
@@ -157,8 +158,7 @@ body{
     border-top-left-radius: 4px;
     overflow: hidden;
     z-index: -2;
-    padding: 1px 1px 0px 1px;
-    padding: 0px;
+    
     border-left: 1px solid #ccc;
     border-top: 1px solid #ccc;
     border-right: 1px solid #ccc;
@@ -220,12 +220,13 @@ body{
     height: 14px;
     width: 14px;
     transition: background-color 0.2s ease-out;
+    background-color: #eee;
   }
   .close-button:hover{
     background-color: #ddd;
   }
   .close-button:active{
-    background-color: #555;
+    background-color: #999;
   }
   .btn{
     height: 100%;
@@ -261,7 +262,7 @@ body{
   #arrow,
 #arrow::before {
   z-index: 0;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   
   position: absolute;
   width: 50px;
@@ -276,7 +277,7 @@ body{
 
 #arrow::before {
   background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   visibility: visible;
   content: '';
   transform: rotate(45deg);

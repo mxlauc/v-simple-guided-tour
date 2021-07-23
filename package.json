@@ -1,6 +1,6 @@
 {
   "name": "v-simple-guided-tour",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/v-simple-guided-tour.ssr.js",
   "browser": "dist/v-simple-guided-tour.esm.js",
@@ -48,5 +48,10 @@
   },
   "engines": {
     "node": ">=12"
+  },
+  "homepage": "https://mxlauc.github.io/v-simple-guided-tour",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mxlauc/v-simple-guided-tour"
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" style="padding: 100px 25%">
+  <div id="app" style="padding: 100px 15%">
     <v-simple-guided-tour :steps="steps" :show="showGuide" @closed="dialogClosed"/>
 
     <h1 style="text-align:center;">Press the button to show V Simple Guided Tour</h1>
