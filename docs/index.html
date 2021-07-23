@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/vue@next"></script>
-
-    <script src="v-simple-guided-tour.min.js"></script>
-    <title>Document</title>
+    <script src="https://unpkg.com/vue@3.1.5/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/v-simple-guided-tour"></script>    
+    <title>V Simple Guided Tour</title>
 </head>
 <body>
-    <div id="app" style="padding: 100px 25%">
-        <v-simple-guided-tour :steps="steps" :show="showGuide" @closed="dialogClosed"></v-simple-guided-tour>
+    <div id="app" style="padding: 100px 15%">
+        <v-simple-guided-tour :steps="steps" :show="showGuide" @closed="dialogClosed" color="#FD650A"></v-simple-guided-tour>
         
     
         <h1 style="text-align:center;">Press the button to show V Simple Guided Tour</h1>
