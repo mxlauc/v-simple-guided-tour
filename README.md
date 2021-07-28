@@ -16,7 +16,7 @@ The VSimpleGuidedTour will be on button#id1, button#id3, button#id4 and finally 
 <template>
     <div id="app">
 
-        <v-simple-guided-tour :steps="steps" :show="showGuide" @closed="dialogClosed" color="#FD650A"/>
+        <v-simple-guided-tour :steps="steps" :show="showGuide" @closed="dialogClosed" color="#FD650A" :labels="labels"/>
 
         <h1 style="text-align:center;">Press the button to show V Simple Guided Tour</h1>
         <button @click="showGuide = true">Show guide</button>
@@ -41,6 +41,11 @@ export default defineComponent({
     data(){
         return {
             showGuide: false,
+            labels : {
+                prev: "Prev.",
+                next: "Next",
+                close: "Close now",
+            },
             steps : [
                 {
                     selector: "#id1",
@@ -82,6 +87,7 @@ export default defineComponent({
 | show | Boolean (default = true) - If it is true, the dialog is shown on step one. If it is false, the dialog is removed from DOM. See @click on Show Guide button.|
 | closed | Event that is fired when the dialog is closed by user. You must create a dialogClosed method, in order to dialog can be seen again when user clicks the Show Guide button.|
 | color | String (default = "#15DBB7") - The color of title, progressbar and buttons next and prev.|
+| labels | Object (default = { prev: "Previous", next: "Next", close: "Close" }) - Those are the texts to show on prev, next and close buttons (Use it if you want to show other text or if you are working in Spanish or other languages).|
 
 ## Authors
 [@mxlauc](https://github.com/mxlauc)

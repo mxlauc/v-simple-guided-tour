@@ -4,7 +4,7 @@
       <div class="vsgt-container-border">
         <div class="vsgt-container">
           <div class="vsgt-close-button" @click="close">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: unset">
               <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
             </svg>
           </div>
@@ -212,6 +212,9 @@ export default defineComponent({
     width: 14px;
     transition: background-color 0.2s ease-out;
     background-color: #eee;
+    box-sizing: unset;
+    font-family: none;
+    line-height: normal;
   }
   .vsgt-close-button:hover{
     background-color: #ddd;
@@ -220,6 +223,7 @@ export default defineComponent({
     background-color: #999;
   }
   .vsgt-btn{
+    font-size: revert;
     height: 100%;
     padding: 0.75rem;
     text-transform: uppercase;
