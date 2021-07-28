@@ -1,6 +1,6 @@
 {
   "name": "v-simple-guided-tour",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "dist/v-simple-guided-tour.ssr.js",
   "browser": "dist/v-simple-guided-tour.esm.js",
