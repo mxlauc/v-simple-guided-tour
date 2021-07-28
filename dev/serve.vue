@@ -1,6 +1,6 @@
 <template>
   <div id="app" style="padding: 100px 15%">
-    <v-simple-guided-tour :steps="steps" :show="showGuide" @closed="dialogClosed"/>
+    <v-simple-guided-tour :steps="steps" :show="showGuide" @closed="dialogClosed" :labels="labels" color="#ff6600"/>
 
     <h1 style="text-align:center;">Press the button to show V Simple Guided Tour</h1>
 
@@ -81,6 +81,11 @@ export default defineComponent({
   data(){
     return {
       showGuide: false,
+      labels : {
+        prev: "Anterior",
+        next: "Siguiente",
+        close: "Cerrar",
+      },
       steps : [
         {
           selector: "#id1",

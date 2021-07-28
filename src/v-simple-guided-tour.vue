@@ -1,6 +1,7 @@
 <template>
   <v-simple-guided-tour-dialog
     v-if="showDialog"
+    :labels="labels"
     :data="steps[currentStep]"
     :current-step="currentStep"
     :total-steps="steps.length"
@@ -39,6 +40,14 @@ export default defineComponent({
     color: {
       type: String,
       default: "#15DBB7",
+    },
+    labels : {
+      type: Object,
+      default: {
+        prev: "Previous",
+        next: "Next",
+        close: "Close"
+      }
     },
   },
   emits:[
