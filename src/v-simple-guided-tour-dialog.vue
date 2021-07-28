@@ -1,38 +1,38 @@
 <template>
-  <div class="dialog" ref="popper" :style="getCssColor">
-      <div id="arrow" data-popper-arrow></div>
+  <div class="vsgt-dialog" ref="popper" :style="getCssColor">
+      <div id="vsgt-arrow" data-popper-arrow></div>
 
 
-      <div class="container-border">
-        <div class="container">
-          <div class="close-button" @click="close">
+      <div class="vsgt-container-border">
+        <div class="vsgt-container">
+          <div class="vsgt-close-button" @click="close">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
               <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
             </svg>
           </div>
-          <h3 class="m-0 mb-3 title" >
+          <h3 class="vsgt-m-0 vsgt-mb-3 vsgt-title" >
             {{data.title}}
           </h3>  
-          <p class="m-0">
+          <p class="vsgt-m-0">
             {{data.description}}
           </p>
         </div>
       </div>
       <div>
-        <div class="row footer">
-          <div class="col-auto counter">
+        <div class="vsgt-row vsgt-footer">
+          <div class="vsgt-col-auto vsgt-counter">
             {{currentStep + 1}} / {{totalSteps}}
           </div>
-          <div class="col vertical-center">
-            <div class="progressbar">
-              <div class="progress" :style="{width: getProgressWidth + '%'}">
+          <div class="vsgt-col vsgt-vertical-center">
+            <div class="vsgt-progressbar">
+              <div class="vsgt-progress" :style="{width: getProgressWidth + '%'}">
               </div>
             </div>
           </div>
-          <div class="col-auto">
-            <button class="btn" @click="prev" :style="{visibility: currentStep == 0 ? 'hidden' : 'visible'}">previous</button>
-            <button class="btn" @click="next">
-              {{(currentStep + 1) < totalSteps ? 'next' : 'close'}}
+          <div class="vsgt-col-auto">
+            <button class="vsgt-btn" @click="prev" :style="{visibility: currentStep == 0 ? 'hidden' : 'visible'}">{{labels.prev}}</button>
+            <button class="vsgt-btn" @click="next">
+              {{(currentStep + 1) < totalSteps ? labels.next : labels.close}}
             </button>
           </div>
         </div>
@@ -48,11 +48,6 @@ import jump from 'jump.js'
 
 export default defineComponent({
   name: 'VSimpleGuidedTourDialog', 
-  data() {
-    return {
-      
-    };
-  },
   props: {
     data : {
       type: Object,
@@ -70,6 +65,9 @@ export default defineComponent({
       type: String,
       default: "#15DBB7",
     },
+    labels: {
+      type: Object
+    }
   },
   watch:{
     data(newData){
@@ -99,7 +97,7 @@ export default defineComponent({
             {
               name: 'offset',
               options: {
-                offset: [0, 30],
+                offset: [0, 20],
               },
             },
             
@@ -135,24 +133,25 @@ body{
 }
 </style>
 <style scoped>
-  .m-0{
+  .vsgt-m-0{
     margin: 0px;
   }
-  .p-0{
+  .vsgt-p-0{
     padding: 0px;
   }
-  .mb-3{
+  .vsgt-mb-3{
     margin-bottom: 1rem;
   }
-  .dialog{
+  .vsgt-dialog{
     border-radius: 4px;
     width: 400px;
+    max-width: 100%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   }
-  .title{
+  .vsgt-title{
     color:var(--color);
   }
-  .container-border{
+  .vsgt-container-border{
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
     overflow: hidden;
@@ -164,7 +163,7 @@ body{
     border-right: 1px solid #ccc;
     background-color: #fff;
   }
-  .container{
+  .vsgt-container{
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
     overflow: hidden;
@@ -173,29 +172,29 @@ body{
     padding: 1rem;
     background-color: #fff;
   }
-  .counter{
+  .vsgt-counter{
     padding: 0.75rem;
     padding-right:0;
     font-weight:bold;
     color:#fff;
   }
-  .row{
+  .vsgt-row{
     display: flex;
     width: 100%;
     flex-wrap:wrap
   }
-  .col{
+  .vsgt-col{
     max-width:100%;
     flex-grow:1;
     flex-basis:0;
     position:relative
   }
-  .col-auto{
+  .vsgt-col-auto{
     flex: 0 0 auto;
     width: auto;
     max-width: none;
   }
-  .progressbar{
+  .vsgt-progressbar{
     margin: 0px 10px;
     width: 100%;
     background-color: #15DBB7;
@@ -204,15 +203,16 @@ body{
     height: 8px;
     overflow: hidden;
   }
-  .progress{
+  .vsgt-progress{
     background-color: #fff;
     height: 100%;
     border-radius: 4px;
     transition: width 0.2s ease-out;
     transition-delay: 0.3s;
   }
-  .close-button{
+  .vsgt-close-button{
     float:right;
+    background-color: #eee;
     margin: 0 0 0.5rem 0.5rem;
     color: #666;
     border-radius: 50%;
@@ -221,13 +221,13 @@ body{
     width: 14px;
     transition: background-color 0.2s ease-out;
   }
-  .close-button:hover{
+  .vsgt-close-button:hover{
     background-color: #ddd;
   }
-  .close-button:active{
+  .vsgt-close-button:active{
     background-color: #555;
   }
-  .btn{
+  .vsgt-btn{
     height: 100%;
     padding: 0.75rem;
     text-transform: uppercase;
@@ -239,13 +239,13 @@ body{
     outline: none;
     transition: background-color 0.2s ease-out;
   }
-  .btn:hover{
+  .vsgt-btn:hover{
     background-color: #45455c;
   }
-  .btn:active{
+  .vsgt-btn:active{
     background-color: #000;
   }
-  .footer{
+  .vsgt-footer{
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
     
@@ -253,13 +253,13 @@ body{
     position: relative;
     background-color:#42424E;
   }
-  .vertical-center{
+  .vsgt-vertical-center{
     display: flex;
     align-items: center;
   }
 
-  #arrow,
-#arrow::before {
+  #vsgt-arrow,
+#vsgt-arrow::before {
   z-index: 0;
   border: 1px solid #ccc;
   
@@ -269,34 +269,34 @@ body{
   background: inherit;
 }
 
-#arrow {
+#vsgt-arrow {
   visibility: hidden;
   
 }
 
-#arrow::before {
+#vsgt-arrow::before {
   background-color: #fff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   visibility: visible;
   content: '';
   transform: rotate(45deg);
 }
-.dialog[data-popper-placement^='top'] > #arrow::before {
+.vsgt-dialog[data-popper-placement^='top'] > #vsgt-arrow::before {
   background-color:#42424E;
 }
-.dialog[data-popper-placement^='top'] > #arrow {
+.vsgt-dialog[data-popper-placement^='top'] > #vsgt-arrow {
   bottom: -4px;
 }
 
-.dialog[data-popper-placement^='bottom'] > #arrow {
+.vsgt-dialog[data-popper-placement^='bottom'] > #vsgt-arrow {
   top: -4px;
 }
 
-.dialog[data-popper-placement^='left'] > #arrow {
+.vsgt-dialog[data-popper-placement^='left'] > #vsgt-arrow {
   right: -4px;
 }
 
-.dialog[data-popper-placement^='right'] > #arrow {
+.vsgt-dialog[data-popper-placement^='right'] > #vsgt-arrow {
   left: -4px;
 }
 </style>

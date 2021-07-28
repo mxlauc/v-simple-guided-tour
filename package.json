@@ -1,6 +1,6 @@
 {
   "name": "v-simple-guided-tour",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/v-simple-guided-tour.ssr.js",
   "browser": "dist/v-simple-guided-tour.esm.js",
@@ -20,8 +20,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.9.2",
-    "jump.js": "^1.0.2",
-    "moveto": "^1.8.2"
+    "jump.js": "^1.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
